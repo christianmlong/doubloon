@@ -16,3 +16,11 @@ When you paste in these messages in to the producer console, you will see those 
 
 Also, be careful when copy-pasting the console commands from the main slide deck (`kafka-console-consumer.sh` etc.). I had a problem where copying from the deck inserted some extra spaces.
 
+## Run the sample app
+
+```
+gradle jar
+java -jar ./build/libs/doubloon-0.1.0.jar localhost:9092 vipConsumersGroup source-topic target-topic
+```
+
+Paste an event in to the producer console. You should see the event appear in the consumer console.
