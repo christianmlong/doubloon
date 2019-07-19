@@ -24,3 +24,14 @@ java -jar ./build/libs/doubloon-0.1.0.jar localhost:9092 vipConsumersGroup sourc
 ```
 
 Paste an event in to the producer console. You should see the event appear in the consumer console.
+
+## Run the sample app for lab 17
+
+```
+gradle jar
+java -jar ./build/libs/doubloon-0.1.0.jar localhost:9092 vipConsumersGroup source-topic good-topic bad-topic
+```
+
+Paste a valid event in to the producer console. You should see the event appear in the good-topic consumer console.
+
+Paste an invalid event (`{"foo": "bar"}`) in to the producer console. You should see the event appear in the bad-topic consumer console.
